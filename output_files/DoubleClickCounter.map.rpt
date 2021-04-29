@@ -1,0 +1,544 @@
+Analysis & Synthesis report for DoubleClickCounter
+Fri Dec 20 11:44:11 2019
+Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |DoubleClickCounter|SPI:spi_comp|r_st_present
+  9. State Machine - |DoubleClickCounter|Preparator:dc_preparator|state_reg
+ 10. State Machine - |DoubleClickCounter|Converter:dc_converter|state_reg
+ 11. State Machine - |DoubleClickCounter|DClick_reg:dc_register|state_reg
+ 12. State Machine - |DoubleClickCounter|DClick_reg:dc_register|DeBounce:detector|state_reg
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Parameter Settings for User Entity Instance: SPI:spi_comp
+ 19. Port Connectivity Checks: "SPI:spi_comp"
+ 20. Port Connectivity Checks: "Counter:dc_counter_tens"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Dec 20 11:44:11 2019       ;
+; Quartus Prime Version           ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
+; Revision Name                   ; DoubleClickCounter                          ;
+; Top-level Entity Name           ; DoubleClickCounter                          ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 235                                         ;
+; Total pins                      ; 7                                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; DoubleClickCounter ; DoubleClickCounter ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; DeBounce.vhd                     ; yes             ; User VHDL File  ; C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DeBounce.vhd           ;         ;
+; DClick_reg.vhd                   ; yes             ; User VHDL File  ; C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DClick_reg.vhd         ;         ;
+; Counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Counter.vhd            ;         ;
+; Converter.vhd                    ; yes             ; User VHDL File  ; C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Converter.vhd          ;         ;
+; Preparator.vhd                   ; yes             ; User VHDL File  ; C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Preparator.vhd         ;         ;
+; SPI.vhd                          ; yes             ; User VHDL File  ; C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/SPI.vhd                ;         ;
+; DoubleClickCounter.vhd           ; yes             ; User VHDL File  ; C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd ;         ;
+; int_time.vhd                     ; yes             ; User VHDL File  ; C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/int_time.vhd           ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimate of Logic utilization (ALMs needed) ; 163           ;
+;                                             ;               ;
+; Combinational ALUT usage for logic          ; 293           ;
+;     -- 7 input functions                    ; 0             ;
+;     -- 6 input functions                    ; 31            ;
+;     -- 5 input functions                    ; 45            ;
+;     -- 4 input functions                    ; 42            ;
+;     -- <=3 input functions                  ; 175           ;
+;                                             ;               ;
+; Dedicated logic registers                   ; 235           ;
+;                                             ;               ;
+; I/O pins                                    ; 7             ;
+;                                             ;               ;
+; Total DSP Blocks                            ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; i_Reset~input ;
+; Maximum fan-out                             ; 165           ;
+; Total fan-out                               ; 1808          ;
+; Average fan-out                             ; 3.34          ;
++---------------------------------------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Entity Name        ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+--------------------+--------------+
+; |DoubleClickCounter           ; 293 (1)             ; 235 (0)                   ; 0                 ; 0          ; 7    ; 0            ; |DoubleClickCounter                                          ; DoubleClickCounter ; work         ;
+;    |Converter:dc_converter|   ; 37 (37)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |DoubleClickCounter|Converter:dc_converter                   ; Converter          ; work         ;
+;    |Counter:dc_counter_ones|  ; 43 (43)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |DoubleClickCounter|Counter:dc_counter_ones                  ; Counter            ; work         ;
+;    |Counter:dc_counter_tens|  ; 43 (43)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |DoubleClickCounter|Counter:dc_counter_tens                  ; Counter            ; work         ;
+;    |DClick_reg:dc_register|   ; 43 (27)             ; 36 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |DoubleClickCounter|DClick_reg:dc_register                   ; DClick_reg         ; work         ;
+;       |DeBounce:detector|     ; 16 (16)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |DoubleClickCounter|DClick_reg:dc_register|DeBounce:detector ; DeBounce           ; work         ;
+;    |Preparator:dc_preparator| ; 51 (51)             ; 41 (41)                   ; 0                 ; 0          ; 0    ; 0            ; |DoubleClickCounter|Preparator:dc_preparator                 ; Preparator         ; work         ;
+;    |SPI:spi_comp|             ; 33 (33)             ; 41 (41)                   ; 0                 ; 0          ; 0    ; 0            ; |DoubleClickCounter|SPI:spi_comp                             ; SPI                ; work         ;
+;    |int_time:dc_time|         ; 42 (42)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |DoubleClickCounter|int_time:dc_time                         ; int_time           ; work         ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |DoubleClickCounter|SPI:spi_comp|r_st_present                               ;
++-----------------------+---------------------+-----------------------+-----------------------+
+; Name                  ; r_st_present.ST_END ; r_st_present.ST_TX_RX ; r_st_present.ST_RESET ;
++-----------------------+---------------------+-----------------------+-----------------------+
+; r_st_present.ST_RESET ; 0                   ; 0                     ; 0                     ;
+; r_st_present.ST_TX_RX ; 0                   ; 1                     ; 1                     ;
+; r_st_present.ST_END   ; 1                   ; 0                     ; 1                     ;
++-----------------------+---------------------+-----------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DoubleClickCounter|Preparator:dc_preparator|state_reg                                                                                                                                                                                                                                ;
++------------------------+------------------------+-----------------+-----------------+-----------------+------------------------+--------------------+-----------------+-----------------+-----------------+--------------+--------------+--------------+--------------+--------------+----------------+
+; Name                   ; state_reg.check_if_new ; state_reg.idle3 ; state_reg.idle2 ; state_reg.idle1 ; state_reg.idleplusplus ; state_reg.idleplus ; state_reg.zero8 ; state_reg.zero7 ; state_reg.zero1 ; state_reg.s7 ; state_reg.s3 ; state_reg.s4 ; state_reg.s5 ; state_reg.s6 ; state_reg.idle ;
++------------------------+------------------------+-----------------+-----------------+-----------------+------------------------+--------------------+-----------------+-----------------+-----------------+--------------+--------------+--------------+--------------+--------------+----------------+
+; state_reg.idle         ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 0            ; 0            ; 0            ; 0              ;
+; state_reg.s6           ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 0            ; 0            ; 1            ; 1              ;
+; state_reg.s5           ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 0            ; 1            ; 0            ; 1              ;
+; state_reg.s4           ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 1            ; 0            ; 0            ; 1              ;
+; state_reg.s3           ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 1            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.s7           ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 1            ; 0            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.zero1        ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 1               ; 0            ; 0            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.zero7        ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 1               ; 0               ; 0            ; 0            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.zero8        ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 1               ; 0               ; 0               ; 0            ; 0            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.idleplus     ; 0                      ; 0               ; 0               ; 0               ; 0                      ; 1                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.idleplusplus ; 0                      ; 0               ; 0               ; 0               ; 1                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.idle1        ; 0                      ; 0               ; 0               ; 1               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.idle2        ; 0                      ; 0               ; 1               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.idle3        ; 0                      ; 1               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 0            ; 0            ; 0            ; 1              ;
+; state_reg.check_if_new ; 1                      ; 0               ; 0               ; 0               ; 0                      ; 0                  ; 0               ; 0               ; 0               ; 0            ; 0            ; 0            ; 0            ; 0            ; 1              ;
++------------------------+------------------------+-----------------+-----------------+-----------------+------------------------+--------------------+-----------------+-----------------+-----------------+--------------+--------------+--------------+--------------+--------------+----------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------+
+; State Machine - |DoubleClickCounter|Converter:dc_converter|state_reg ;
++----------------+--------------+--------------+-----------------------+
+; Name           ; state_reg.s1 ; state_reg.s0 ; state_reg.idle        ;
++----------------+--------------+--------------+-----------------------+
+; state_reg.idle ; 0            ; 0            ; 0                     ;
+; state_reg.s0   ; 0            ; 1            ; 1                     ;
+; state_reg.s1   ; 1            ; 0            ; 1                     ;
++----------------+--------------+--------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------+
+; State Machine - |DoubleClickCounter|DClick_reg:dc_register|state_reg ;
++--------------+--------------+--------------+-------------------------+
+; Name         ; state_reg.s3 ; state_reg.s2 ; state_reg.s0            ;
++--------------+--------------+--------------+-------------------------+
+; state_reg.s0 ; 0            ; 0            ; 0                       ;
+; state_reg.s2 ; 0            ; 1            ; 1                       ;
+; state_reg.s3 ; 1            ; 0            ; 1                       ;
++--------------+--------------+--------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |DoubleClickCounter|DClick_reg:dc_register|DeBounce:detector|state_reg  ;
++--------------+--------------+--------------+--------------+--------------+--------------+
+; Name         ; state_reg.s4 ; state_reg.s3 ; state_reg.s2 ; state_reg.s1 ; state_reg.s0 ;
++--------------+--------------+--------------+--------------+--------------+--------------+
+; state_reg.s0 ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; state_reg.s1 ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; state_reg.s2 ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; state_reg.s3 ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; state_reg.s4 ; 1            ; 0            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                        ;
++-------------------------------------------------------+---------------------------------------------------+
+; Register name                                         ; Reason for Removal                                ;
++-------------------------------------------------------+---------------------------------------------------+
+; Converter:dc_converter|reg_tens[3][1]                 ; Stuck at GND due to stuck port data_in            ;
+; Converter:dc_converter|reg_tens[1][1]                 ; Stuck at GND due to stuck port data_in            ;
+; Converter:dc_converter|reg_ones[1][1]                 ; Stuck at GND due to stuck port data_in            ;
+; Converter:dc_converter|reg_ones[3][1]                 ; Stuck at GND due to stuck port data_in            ;
+; Converter:dc_converter|reg_ones[4][0]                 ; Merged with Converter:dc_converter|reg_ones[2][0] ;
+; Converter:dc_converter|reg_ones[2][0]                 ; Merged with Converter:dc_converter|reg_tens[0][0] ;
+; Converter:dc_converter|reg_tens[0][0]                 ; Merged with Converter:dc_converter|reg_tens[2][0] ;
+; Converter:dc_converter|reg_tens[2][0]                 ; Merged with Converter:dc_converter|reg_tens[4][0] ;
+; Converter:dc_converter|reg_tens[4][0]                 ; Merged with Converter:dc_converter|reg_ones[0][0] ;
+; Preparator:dc_preparator|ex[4,19,25,30,31]            ; Merged with Preparator:dc_preparator|ex[10]       ;
+; Preparator:dc_preparator|ex[6,12,15,21,27]            ; Merged with Preparator:dc_preparator|ex[0]        ;
+; Converter:dc_converter|reg_tens[0][2]                 ; Merged with Converter:dc_converter|reg_tens[0][1] ;
+; Converter:dc_converter|reg_ones[0][2]                 ; Merged with Converter:dc_converter|reg_ones[0][1] ;
+; Preparator:dc_preparator|ex[17]                       ; Merged with Preparator:dc_preparator|ex[16]       ;
+; Preparator:dc_preparator|ex[2]                        ; Merged with Preparator:dc_preparator|ex[1]        ;
+; Preparator:dc_preparator|ex[10]                       ; Stuck at GND due to stuck port data_in            ;
+; Converter:dc_converter|ex[0..7]                       ; Lost fanout                                       ;
+; Converter:dc_converter|state_reg.s0                   ; Lost fanout                                       ;
+; Converter:dc_converter|state_reg.s1                   ; Lost fanout                                       ;
+; DClick_reg:dc_register|DeBounce:detector|state_reg.s4 ; Lost fanout                                       ;
+; Preparator:dc_preparator|state_reg.idle               ; Merged with Converter:dc_converter|state_reg.idle ;
+; SPI:spi_comp|r_counter_data[4]                        ; Stuck at GND due to stuck port data_in            ;
+; SPI:spi_comp|r_counter_clock[3]                       ; Stuck at GND due to stuck port data_in            ;
+; Total Number of Removed Registers = 38                ;                                                   ;
++-------------------------------------------------------+---------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                  ;
++---------------------------------------+---------------------------+--------------------------------------------------------------------------+
+; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                                   ;
++---------------------------------------+---------------------------+--------------------------------------------------------------------------+
+; Converter:dc_converter|ex[7]          ; Lost Fanouts              ; Converter:dc_converter|state_reg.s0, Converter:dc_converter|state_reg.s1 ;
+; Converter:dc_converter|reg_ones[3][1] ; Stuck at GND              ; Preparator:dc_preparator|ex[10]                                          ;
+;                                       ; due to stuck port data_in ;                                                                          ;
++---------------------------------------+---------------------------+--------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 235   ;
+; Number of registers using Synchronous Clear  ; 105   ;
+; Number of registers using Synchronous Load   ; 37    ;
+; Number of registers using Asynchronous Clear ; 164   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 58    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; SPI:spi_comp|o_sclk                    ; 2       ;
+; SPI:spi_comp|o_ss                      ; 1       ;
+; SPI:spi_comp|o_mosi                    ; 2       ;
+; SPI:spi_comp|r_counter_data[3]         ; 5       ;
+; SPI:spi_comp|r_counter_data[2]         ; 5       ;
+; SPI:spi_comp|r_counter_data[1]         ; 5       ;
+; SPI:spi_comp|r_counter_data[0]         ; 5       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DoubleClickCounter|Counter:dc_counter_ones|timer[2]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DoubleClickCounter|Counter:dc_counter_tens|timer[27]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DoubleClickCounter|SPI:spi_comp|r_counter_clock[0]      ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DoubleClickCounter|SPI:spi_comp|cnt_reset[2]            ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DoubleClickCounter|SPI:spi_comp|r_tx_data[15]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DoubleClickCounter|SPI:spi_comp|r_counter_data[0]       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DoubleClickCounter|DClick_reg:dc_register|next_state.s3 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SPI:spi_comp ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; n              ; 16    ; Signed Integer                   ;
+; clk_div        ; 4     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SPI:spi_comp"                                                                                  ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; o_data_parallel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Counter:dc_counter_tens"                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 235                         ;
+;     CLR               ; 33                          ;
+;     CLR SCLR          ; 74                          ;
+;     CLR SLD           ; 19                          ;
+;     ENA               ; 20                          ;
+;     ENA CLR           ; 20                          ;
+;     ENA CLR SLD       ; 18                          ;
+;     SCLR              ; 31                          ;
+;     plain             ; 20                          ;
+; arriav_lcell_comb     ; 296                         ;
+;     arith             ; 139                         ;
+;         1 data inputs ; 139                         ;
+;     normal            ; 157                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 42                          ;
+;         5 data inputs ; 45                          ;
+;         6 data inputs ; 31                          ;
+; boundary_port         ; 7                           ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.68                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+    Info: Processing started: Fri Dec 20 11:44:00 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DoubleClickCounter -c DoubleClickCounter
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
+    Info (12022): Found design unit 1: DeBounce-behav File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DeBounce.vhd Line: 24
+    Info (12023): Found entity 1: DeBounce File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DeBounce.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file dclick_reg.vhd
+    Info (12022): Found design unit 1: DClick_reg-Behavioral File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DClick_reg.vhd Line: 27
+    Info (12023): Found entity 1: DClick_reg File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DClick_reg.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
+    Info (12022): Found design unit 1: Counter-Behavioral File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Counter.vhd Line: 26
+    Info (12023): Found entity 1: Counter File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Counter.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file converter.vhd
+    Info (12022): Found design unit 1: Converter-Behavioral File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Converter.vhd Line: 26
+    Info (12023): Found entity 1: Converter File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Converter.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file preparator.vhd
+    Info (12022): Found design unit 1: Preparator-Behavioral File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Preparator.vhd Line: 29
+    Info (12023): Found entity 1: Preparator File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Preparator.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file spi.vhd
+    Info (12022): Found design unit 1: SPI-rtl File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/SPI.vhd Line: 38
+    Info (12023): Found entity 1: SPI File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/SPI.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file doubleclickcounter.vhd
+    Info (12022): Found design unit 1: DoubleClickCounter-RTL File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 35
+    Info (12023): Found entity 1: DoubleClickCounter File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 13
+Warning (12019): Can't analyze file -- file output_files/int_time.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file int_time.vhd
+    Info (12022): Found design unit 1: int_time-behav File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/int_time.vhd Line: 26
+    Info (12023): Found entity 1: int_time File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/int_time.vhd Line: 13
+Info (12127): Elaborating entity "DoubleClickCounter" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at DoubleClickCounter.vhd(127): object "unused_c_tens" assigned a value but never read File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 127
+Warning (10036): Verilog HDL or VHDL warning at DoubleClickCounter.vhd(128): object "SPIdp_output" assigned a value but never read File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 128
+Info (12128): Elaborating entity "int_time" for hierarchy "int_time:dc_time" File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 167
+Info (12128): Elaborating entity "DClick_reg" for hierarchy "DClick_reg:dc_register" File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 168
+Info (12128): Elaborating entity "DeBounce" for hierarchy "DClick_reg:dc_register|DeBounce:detector" File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DClick_reg.vhd Line: 136
+Info (12128): Elaborating entity "Counter" for hierarchy "Counter:dc_counter_ones" File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 169
+Info (12128): Elaborating entity "Converter" for hierarchy "Converter:dc_converter" File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 171
+Info (12128): Elaborating entity "Preparator" for hierarchy "Preparator:dc_preparator" File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 172
+Info (12128): Elaborating entity "SPI" for hierarchy "SPI:spi_comp" File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at SPI.vhd(118): signal "cnt_reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/SPI.vhd Line: 118
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register SPI:spi_comp|r_counter_data[3] will power up to High File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/SPI.vhd Line: 135
+    Critical Warning (18010): Register SPI:spi_comp|r_counter_data[2] will power up to High File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/SPI.vhd Line: 135
+    Critical Warning (18010): Register SPI:spi_comp|r_counter_data[1] will power up to High File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/SPI.vhd Line: 135
+    Critical Warning (18010): Register SPI:spi_comp|r_counter_data[0] will power up to High File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/SPI.vhd Line: 135
+Info (17049): 11 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "i_miso_dc" File: C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd Line: 20
+Info (21057): Implemented 321 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 314 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4852 megabytes
+    Info: Processing ended: Fri Dec 20 11:44:11 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:21
+
+

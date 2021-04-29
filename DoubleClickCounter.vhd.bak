@@ -1,0 +1,37 @@
+----------------------------------------------------------------------------------------------------
+-- Project      : Doubleclick counter + SPI
+-- Description  : Doubleclick counter with an SPI for data serialization and transfer
+-- Authors      : Djordje Hadzic, Jovan Garasanin
+-- File         : ProjDoubleClickCounter.vhd
+-- File descrip.: This file contains an entity which combines all of the lower level entities into 
+--                a whole.
+----------------------------------------------------------------------------------------------------
+
+entity ProjDoubleClickCounter
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity ProjDoubleClickCounter is 
+   port( 
+    --Input signals
+    i_Clock      : in std_logic;
+    i_Reset    : in std_logic;
+    i_ButtonInput : in std_logic; --Output of DeBounce
+
+    
+    --Output signals
+	 
+)
+    );
+end ProjDoubleClickCounter;
+
+architecture RTL of ProjDoubleClickCounter is
+
+
+
+begin
+
+
+
+end RTL;

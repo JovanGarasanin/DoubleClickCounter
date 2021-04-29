@@ -1,0 +1,24 @@
+Quartus Prime Archive log --	C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.qarlog
+
+Archive:	C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.qar
+Date:		Fri Dec 20 11:59:14 2019
+Quartus Prime		18.1.1 Build 646 04/11/2019 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Converter.vhd
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Counter.vhd
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DClick_reg.vhd
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DeBounce.vhd
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.qpf
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.qsf
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/DoubleClickCounter.vhd
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/Preparator.vhd
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/SPI.vhd
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/int_time.vhd
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/output_files/DoubleClickCounter.cdf
+C:/Users/Elektronika/Desktop/ProjDoubleClickCounter/pin_assign_de1_soc.tcl
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 13 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

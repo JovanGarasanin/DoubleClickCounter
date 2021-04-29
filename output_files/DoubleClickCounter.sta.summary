@@ -1,0 +1,197 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'i_Clock'
+Slack : -6.828
+TNS   : -205.526
+
+Type  : Slow 1100mV 85C Model Setup 'DClick_reg:dc_register|state_reg.s3'
+Slack : -4.404
+TNS   : -188.313
+
+Type  : Slow 1100mV 85C Model Setup 'Counter:dc_counter_ones|Carry'
+Slack : -3.833
+TNS   : -173.762
+
+Type  : Slow 1100mV 85C Model Setup 'int_time:dc_time|timer[10]'
+Slack : -3.196
+TNS   : -336.004
+
+Type  : Slow 1100mV 85C Model Hold 'i_Clock'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'DClick_reg:dc_register|state_reg.s3'
+Slack : 0.427
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'Counter:dc_counter_ones|Carry'
+Slack : 0.431
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'int_time:dc_time|timer[10]'
+Slack : 0.546
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'int_time:dc_time|timer[10]'
+Slack : -0.394
+TNS   : -103.739
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Counter:dc_counter_ones|Carry'
+Slack : -0.394
+TNS   : -26.034
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'DClick_reg:dc_register|state_reg.s3'
+Slack : -0.394
+TNS   : -23.282
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'i_Clock'
+Slack : -0.394
+TNS   : -21.160
+
+Type  : Slow 1100mV 0C Model Setup 'i_Clock'
+Slack : -6.551
+TNS   : -195.161
+
+Type  : Slow 1100mV 0C Model Setup 'DClick_reg:dc_register|state_reg.s3'
+Slack : -4.226
+TNS   : -181.034
+
+Type  : Slow 1100mV 0C Model Setup 'Counter:dc_counter_ones|Carry'
+Slack : -3.654
+TNS   : -165.659
+
+Type  : Slow 1100mV 0C Model Setup 'int_time:dc_time|timer[10]'
+Slack : -3.090
+TNS   : -327.573
+
+Type  : Slow 1100mV 0C Model Hold 'i_Clock'
+Slack : 0.049
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'DClick_reg:dc_register|state_reg.s3'
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'Counter:dc_counter_ones|Carry'
+Slack : 0.444
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'int_time:dc_time|timer[10]'
+Slack : 0.557
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'int_time:dc_time|timer[10]'
+Slack : -0.394
+TNS   : -102.175
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Counter:dc_counter_ones|Carry'
+Slack : -0.394
+TNS   : -26.025
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'DClick_reg:dc_register|state_reg.s3'
+Slack : -0.394
+TNS   : -23.215
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'i_Clock'
+Slack : -0.394
+TNS   : -19.259
+
+Type  : Fast 1100mV 85C Model Setup 'i_Clock'
+Slack : -4.288
+TNS   : -122.204
+
+Type  : Fast 1100mV 85C Model Setup 'DClick_reg:dc_register|state_reg.s3'
+Slack : -2.641
+TNS   : -112.771
+
+Type  : Fast 1100mV 85C Model Setup 'Counter:dc_counter_ones|Carry'
+Slack : -2.174
+TNS   : -98.156
+
+Type  : Fast 1100mV 85C Model Setup 'int_time:dc_time|timer[10]'
+Slack : -1.901
+TNS   : -152.231
+
+Type  : Fast 1100mV 85C Model Hold 'DClick_reg:dc_register|state_reg.s3'
+Slack : 0.158
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'Counter:dc_counter_ones|Carry'
+Slack : 0.159
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'i_Clock'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'int_time:dc_time|timer[10]'
+Slack : 0.225
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'i_Clock'
+Slack : -0.398
+TNS   : -14.572
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'int_time:dc_time|timer[10]'
+Slack : -0.025
+TNS   : -0.497
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Counter:dc_counter_ones|Carry'
+Slack : 0.031
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'DClick_reg:dc_register|state_reg.s3'
+Slack : 0.103
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'i_Clock'
+Slack : -3.650
+TNS   : -104.001
+
+Type  : Fast 1100mV 0C Model Setup 'DClick_reg:dc_register|state_reg.s3'
+Slack : -2.281
+TNS   : -97.272
+
+Type  : Fast 1100mV 0C Model Setup 'Counter:dc_counter_ones|Carry'
+Slack : -1.873
+TNS   : -84.577
+
+Type  : Fast 1100mV 0C Model Setup 'int_time:dc_time|timer[10]'
+Slack : -1.563
+TNS   : -127.228
+
+Type  : Fast 1100mV 0C Model Hold 'Counter:dc_counter_ones|Carry'
+Slack : 0.144
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'DClick_reg:dc_register|state_reg.s3'
+Slack : 0.144
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'i_Clock'
+Slack : 0.190
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'int_time:dc_time|timer[10]'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'i_Clock'
+Slack : -0.435
+TNS   : -17.350
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'int_time:dc_time|timer[10]'
+Slack : -0.002
+TNS   : -0.012
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Counter:dc_counter_ones|Carry'
+Slack : 0.053
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'DClick_reg:dc_register|state_reg.s3'
+Slack : 0.110
+TNS   : 0.000
+
+------------------------------------------------------------

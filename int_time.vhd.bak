@@ -1,0 +1,60 @@
+----------------------------------------------------------------------------------------------------
+-- Project      : Doubleclick counter + SPI
+-- Description  : Doubleclick counter with an SPI for data serialization and transfer
+-- Authors      : Djordje Hadzic, Jovan Garasanin
+-- File         : int_time.vhd
+-- File descrip.: This file contains an entity which combines all of the lower level entities into 
+--                a whole.
+----------------------------------------------------------------------------------------------------
+
+library IEEE;
+use ieee.std_logic_1164.all;
+
+entity int_time is 
+   port( 
+    --Input signals
+    i_Clock     	: in std_logic;
+    
+    --Output signals
+	 o_Clock			: out std_logic
+	 
+    );
+end int_time;
+
+
+
+architecture behav of int_time is
+
+
+
+signal timer			: integer;
+signal carry			: std_logic;
+signal cross			: std_logic;
+
+
+begin
+
+	 timer_gen: process(i_Clock) is 
+        begin
+            if (i_Clock'event and i_Clock = '1') then
+                if (cross = '1') then
+                    timer <= 0; --*num;
+						  carry <= not carry;
+					 else 
+						  timer <= timer + 1;
+					 end if;
+            end if;
+            
+        end process;
+		  
+	timer_flg: process(timer) is
+		begin
+			if (timer < 10) then
+				cross <= '0';
+			else	
+				cross <= '1';
+			end if;
+		
+		end process;
+		o_Clock <= carry;
+end behav;
